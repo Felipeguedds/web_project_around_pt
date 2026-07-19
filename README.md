@@ -11,18 +11,20 @@ O **Around The U.S.** é uma página interativa onde o usuário compartilha foto
 ## 🚀 Tecnologias Utilizadas
 
 - **HTML e CSS** → Estruturação e estilização do site
-- **JavaScript** → Manipulação do DOM, abertura e fechamento de popups e edição do perfil
+- **JavaScript** → Manipulação do DOM: criação, curtida, exclusão e ampliação de cartões, além dos popups e da edição de perfil
 - **Metodologia BEM Flat** → Organização dos arquivos e código CSS para manter um padrão claro e escalável
 - **Acessibilidade** → Aplicação de boas práticas para tornar o site mais inclusivo e utilizável para todos
 
 ## ✨ Funcionalidades
 
-- Edição de nome e bio do perfil com atualização dinâmica na página
-- Galeria de cartões com títulos e imagens de destinos
-- Popup com abertura e fechamento controlados por JavaScript
+- **Edição de perfil** → Atualização dinâmica de nome e bio na página
+- **Galeria de cartões** → Gerada a partir de um array, com títulos e imagens de destinos
+- **Novos lugares** → Adição de cartões pelo popup "Novo Local"
+- **Curtir e excluir** → Controle de cada cartão pelos botões de curtida e exclusão
+- **Imagem ampliada** → Visualização da foto em popup ao clicar no cartão
+- **Popups** → Abertura e fechamento controlados por JavaScript
 
 ## 🔧 Planos de Melhoria
 
-- **Novos cartões** → Adicionar formulário para o usuário incluir novos lugares na galeria
-- **Curtir e excluir** → Ativar os botões de curtir e de exclusão dos cartões
 - **Validação de formulários** → Impedir o envio de campos vazios ou inválidos
+- **Back-end** → Salvar cartões e curtidas para que persistam depois de recarregar a página
