@@ -80,6 +80,34 @@
   margin-bottom: 0;
 }
 
+.popup__input_type_error {
+  border-bottom: 1px solid #f00;
+}
+
+.popup__error {
+  margin: 5px 0 0;
+  font-size: 12px;
+  line-height: 15px;
+  color: #f00;
+  opacity: 0;
+}
+
+.popup__error_visible {
+  opacity: 1;
+}
+
+.popup__button_disabled {
+  color: #000;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  opacity: 0.2;
+}
+
+.popup__button_disabled:hover {
+  background: #fff;
+  cursor: default;
+}
+
 .popup__title {
   margin: 0;
   font-size: 24px;

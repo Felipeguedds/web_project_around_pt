@@ -47,12 +47,21 @@ const cardModalNameInput = cardModal.querySelector(
 );
 const cardModalLinkInput = cardModal.querySelector(".popup__input_type_url");
 
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".popup_is-opened");
+    closeModal(openedModal);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("popup_is-opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("popup_is-opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 function fillProfileForm() {
@@ -62,6 +71,7 @@ function fillProfileForm() {
 
 function handleOpenEditModal() {
   fillProfileForm();
+  resetValidation(editModalForm, validationConfig);
   openModal(editModal);
 }
 
@@ -81,6 +91,8 @@ editModalCloseButton.addEventListener("click", handleCloseEditModal);
 editModalForm.addEventListener("submit", handleProfileFormSubmit);
 
 function handleOpenCardModal() {
+  cardModalForm.reset();
+  resetValidation(cardModalForm, validationConfig);
   openModal(cardModal);
 }
 
@@ -122,10 +134,18 @@ function handleCloseImageModal() {
 
 imageModalCloseButton.addEventListener("click", handleCloseImageModal);
 
-function getCardElement(
-  name = "Lugar sem nome",
-  link = "./images/placeholder.jpg"
-) {
+function handleOverlayClose(evt) {
+  if (evt.target.classList.contains("popup")) {
+    closeModal(evt.target);
+  }
+}
+
+const popups = document.querySelectorAll(".popup");
+popups.forEach((popup) => {
+  popup.addEventListener("mousedown", handleOverlayClose);
+});
+
+function getCardElement(name, link) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitle = cardElement.querySelector(".card__title");
   const cardImage = cardElement.querySelector(".card__image");
