@@ -12,6 +12,7 @@ O **Around The U.S.** é uma página interativa onde o usuário compartilha foto
 
 - **HTML e CSS** → Estruturação e estilização do site
 - **JavaScript** → Manipulação do DOM: criação, curtida, exclusão e ampliação de cartões, além dos popups, da edição de perfil e da validação dos formulários
+- **JavaScript orientado a objetos** → Código organizado em classes (`Card` e `FormValidator`) e dividido em módulos com `import`/`export`
 - **Metodologia BEM Flat** → Organização dos arquivos e código CSS para manter um padrão claro e escalável
 - **Acessibilidade** → Aplicação de boas práticas para tornar o site mais inclusivo e utilizável para todos
 
