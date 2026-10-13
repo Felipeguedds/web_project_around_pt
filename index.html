@@ -18,7 +18,14 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img class="profile__image" src="./images/avatar.jpg" alt="Avatar" />
+          <div class="profile__image-container">
+            <img class="profile__image" src="./images/avatar.jpg" alt="Avatar" />
+            <button
+              aria-label="Editar avatar"
+              class="profile__avatar-button"
+              type="button"
+            ></button>
+          </div>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button
@@ -124,6 +131,41 @@
             />
             <span class="popup__error" id="card-link-input-error"></span>
             <button class="button popup__button" type="submit">Criar</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup" id="avatar-popup">
+        <div class="popup__content">
+          <button
+            aria-label="Fechar pop-up"
+            class="popup__close"
+            type="button"
+          ></button>
+          <h3 class="popup__title">Alterar a foto do perfil</h3>
+          <form class="popup__form" id="avatar-form" novalidate>
+            <input
+              class="popup__input popup__input_type_avatar"
+              id="avatar-link-input"
+              name="avatar"
+              placeholder="Link de imagem"
+              required
+              type="url"
+            />
+            <span class="popup__error" id="avatar-link-input-error"></span>
+            <button class="button popup__button" type="submit">Salvar</button>
+          </form>
+        </div>
+      </div>
+      <div class="popup popup_type_confirm" id="delete-popup">
+        <div class="popup__content">
+          <button
+            aria-label="Fechar pop-up"
+            class="popup__close"
+            type="button"
+          ></button>
+          <h3 class="popup__title">Tem certeza?</h3>
+          <form class="popup__form popup__form_type_confirm" id="delete-form">
+            <button class="button popup__button" type="submit">Sim</button>
           </form>
         </div>
       </div>
