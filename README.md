@@ -1,31 +1,21 @@
-# 🌎 Around The U.S.
+# Around The U.S.
 
-## 📌 Descrição do Projeto
+Galeria interativa onde o usuário publica fotos de lugares dos Estados Unidos, com perfil editável e tudo salvo num servidor via API.
 
-O **Around The U.S.** é uma página interativa onde o usuário compartilha fotos de lugares dos Estados Unidos. É o projeto principal do meu programa de desenvolvimento web, construído em etapas — cada etapa adiciona novas funcionalidades com JavaScript. O site conta com:
+Demo ao vivo: [felipeguedds.github.io/web_project_around_pt](https://felipeguedds.github.io/web_project_around_pt/)
 
-- **Perfil do usuário** com edição de nome e bio através de popup
-- **Galeria de cartões** com fotos de destinos dos EUA
-- **Design responsivo** adaptado para diferentes tamanhos de tela
+![Demonstração do projeto](./demo.gif)
 
-## 🚀 Tecnologias Utilizadas
+É o projeto principal do bootcamp da Tripleten, construído em etapas, e cada etapa adiciona funcionalidades novas. Nesta etapa o site passou a conversar com um servidor. Perfil, avatar, cartões e curtidas agora são carregados e salvos via API.
 
-- **HTML e CSS** → Estruturação e estilização do site
-- **JavaScript** → Manipulação do DOM: criação, curtida, exclusão e ampliação de cartões, além dos popups, da edição de perfil e da validação dos formulários
-- **JavaScript orientado a objetos** → Código organizado em classes com responsabilidade única (`Card`, `FormValidator`, `Section`, `UserInfo`, `Popup` e as subclasses `PopupWithImage` e `PopupWithForm`), com acoplamento fraco e dividido em módulos com `import`/`export`
-- **Metodologia BEM Flat** → Organização dos arquivos e código CSS para manter um padrão claro e escalável
-- **Acessibilidade** → Aplicação de boas práticas para tornar o site mais inclusivo e utilizável para todos
+## Funcionalidades
 
-## ✨ Funcionalidades
+O usuário edita nome, bio e foto de perfil pelos popups, e tudo é salvo no servidor. A galeria de cartões é carregada da API ao abrir a página. Dá pra adicionar um lugar novo, curtir (as curtidas ficam salvas) e excluir, sendo que a lixeira só aparece nos cartões do próprio usuário e a exclusão passa por um popup de confirmação. Clicar no cartão abre a imagem ampliada.
 
-- **Edição de perfil** → Atualização dinâmica de nome e bio na página
-- **Galeria de cartões** → Gerada a partir de um array, com títulos e imagens de destinos
-- **Novos lugares** → Adição de cartões pelo popup "Novo Local"
-- **Curtir e excluir** → Controle de cada cartão pelos botões de curtida e exclusão
-- **Imagem ampliada** → Visualização da foto em popup ao clicar no cartão
-- **Validação de formulários** → Campos conferidos em tempo real, com aviso de erro e botão de envio bloqueado enquanto algum dado for inválido
-- **Popups** → Abertura e fechamento controlados por JavaScript, inclusive ao clicar fora da janela ou apertar Esc
+Os formulários são validados em tempo real: o campo mostra o erro em vermelho e o botão de envio fica bloqueado enquanto houver dado inválido. Durante as requisições os botões mostram "Salvando..." pra dar retorno de que algo está acontecendo. Os popups fecham pelo X, clicando fora da janela ou apertando Esc.
 
-## 🔧 Planos de Melhoria
+## Construído com
 
-- **Back-end** → Salvar cartões e curtidas para que persistam depois de recarregar a página
+- HTML e CSS, com o CSS organizado em BEM flat
+- JavaScript orientado a objetos: o código é dividido em classes com responsabilidade única (`Api`, `Card`, `FormValidator`, `Section`, `UserInfo` e a família `Popup` com `PopupWithImage`, `PopupWithForm` e `PopupWithConfirmation`), conectadas por `import`/`export`
+- JavaScript assíncrono com a Fetch API: requisições na classe `Api`, resposta verificada antes do `.json()`, erros tratados no `.catch` e `Promise.all` pra carregar usuário e cartões juntos antes de renderizar
