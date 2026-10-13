@@ -119,6 +119,18 @@
   display: flex;
 }
 
+.popup_type_confirm .popup__content {
+  min-height: 0;
+}
+
+.popup__form_type_confirm {
+  margin-top: 0;
+}
+
+.popup__form_type_confirm .popup__button {
+  margin-top: 38px;
+}
+
 .popup__content_content_image {
   max-width: 75vw;
   max-height: 75vh;
